@@ -111,17 +111,13 @@ body {
   z-index: 0;
 }
 
-
 /* card design start */
-
 
 .faculty {
   width: 100%;
   padding: var(--gen-padding);
   border-bottom: 1.5px solid var(--clr-dark);
 }
-
-
 
 .faculty .row-1 {
   width: 100%;
@@ -131,7 +127,7 @@ body {
   height: 67vh;
   padding: 10px;
   box-shadow: rgb(17 12 46 / 15%) 13px -5px 25px 13px;
-  border-radius: 10px 10px 20px 20px;
+  border-radius: 10px 10px 15px 15px;
   border: 2.5px solid var(--clr-accent);
   display: flex;
   flex-direction: column;
@@ -140,7 +136,6 @@ body {
   position: relative;
   transition: var(--gen-transition);
 }
-
 
 .card.faculty-card::before {
   position: absolute;
@@ -152,26 +147,26 @@ body {
   border-radius: 10px 10px 0 0;
   z-index: -1;
 }
-.card:hover  {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+.card:hover {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-    border-color: var(--clr-dark);
+  border-color: var(--clr-dark);
 }
-.card .top-part:hover img{
-    transition: var(--gen-transition);
-    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-    transform: scale(1.2);
+.card .top-part:hover img {
+  transition: var(--gen-transition);
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  transform: scale(1.2);
 }
-.card .top-part,.card .bottom-part{
-    height: 50%;
+.card .top-part,
+.card .bottom-part {
+  height: 50%;
 }
-.card .bottom-part{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+.card .bottom-part {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
-
 
 .card .image {
   width: 130px;
@@ -189,48 +184,54 @@ body {
   border: 2px solid var(--clr-accent);
 }
 .card h3 {
-    text-align: center;
-    margin: auto;
-    color: var(--clr-accent);
-    padding: 5px;
-    letter-spacing: 2px;
-  }
-.card p{
-    text-align: center;
+  text-align: center;
+  font-size: 1.37rem;
+  text-transform: capitalize;
+
+  margin: auto;
+  margin-top: 12px;
+  color: var(--clr-accent);
+  padding: 5px;
+  letter-spacing: 2px;
 }
-.social-handle{
-    margin: 0 auto 0;
-    display: flex;
+.card p {
+  text-align: center;
+  margin-top: 12px;
 }
-.social-handle a{
+.social-handle {
+  margin: 0 auto 0;
+  display: flex;
+}
+.social-handle a {
   margin-right: 10px;
   margin-left: 10px;
 }
-.social-handle i{
-    color: var(--clr-accent);
-    cursor: pointer;
-    transform: scale(1.3);
+.social-handle i {
+  color: var(--clr-accent);
+  cursor: pointer;
+  transform: scale(1.3);
 }
 
-.social-handle i:hover{
-    transform: scale(2);
-    transition: var(--gen-transition);
+.social-handle i:hover {
+  transform: scale(2);
+  transition: var(--gen-transition);
 }
 
 .row-1 .card {
-    margin: auto;
-  }
+  margin: auto;
+}
 .row-2 {
   display: flex;
   justify-content: space-between;
   margin-top: 1.6rem;
+  padding: 0 10%;
 }
 
-.club-head{
+.club-head {
   width: 100%;
   padding: 40px 10px 60px 10px;
 }
-.card.clubHead-card{
+.card.clubHead-card {
   width: 20vw;
   height: 47vh;
   padding: 10px;
@@ -243,40 +244,64 @@ body {
   transition: var(--gen-transition);
   margin-bottom: 5vh;
 }
-.clubHead-card .image{
-  /* width: 150px;
-  height: 150px;*/
-} 
 
+.club-mem {
+  width: 100%;
+  padding: var(--gen-padding);
+}
 
+.member-list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 8px;
+  justify-items: center;
+}
+.member-list li{
+  list-style-type: circle;
+  color: var(--clr-accent);
+  text-align: left;
+}
 
+.interns{
+  width: 100%;
+  padding: var(--gen-padding);
+}
+.club-mem h1,.interns h1{
+  margin-bottom: 5vh;
+}
 
 /* responsive */
-@media(max-width:950px){
-  .card.faculty-card{
+@media (max-width: 950px) {
+  .card.faculty-card {
     height: 90%;
     width: 40vw;
     margin-bottom: 20px;
   }
-  
-  
-  .row-2{
+
+  .row-2 {
     flex-direction: column;
     align-items: center;
   }
 }
 
-@media(max-width:480px){
-  .card.faculty-card{
+@media (max-width: 480px) {
+  .card.faculty-card {
     width: 100%;
     height: 50vh;
   }
-  .card.faculty-card::before{
+  .card.faculty-card::before {
     height: 33%;
   }
-  
-  .card.clubHead-card{
+  .row-2 {
+    padding: 0;
+  }
+
+  .card.clubHead-card {
     width: 65%;
     height: 37vh;
+  }
+  .member-list{
+    grid-template-columns: repeat(2, 1fr);
   }
 }
