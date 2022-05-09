@@ -252,15 +252,18 @@ body {
 
 .member-list {
   width: 100%;
+  /* border: 1px solid black; */
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  row-gap: 8px;
   justify-items: center;
+  row-gap: 8px;
 }
 .member-list li{
-  list-style-type: circle;
+  list-style-type: disc;
   color: var(--clr-accent);
-  text-align: left;
+  /* border: 1px solid green; */
+  
 }
 
 .interns{
@@ -302,6 +305,6 @@ body {
     height: 37vh;
   }
   .member-list{
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns:  1fr;
   }
 }
