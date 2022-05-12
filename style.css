@@ -117,21 +117,33 @@ body {
   width: 100%;
   padding: var(--gen-padding);
   border-bottom: 1.5px solid var(--clr-dark);
+  display: flex;
+  flex-direction: column;
+}
+.row-2 {
+  border: 2px solid green;
+  display: grid;
+  justify-content: center;
+  gap: 50px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* grid-template-columns: repeat(3,300px); */
+  margin-top: 1.6rem;
+  /* overflow: auto; */
 }
 
-.faculty .row-1 {
-  width: 100%;
-}
 .card.faculty-card {
-  width: 15rem;
+  max-width: 300px;
+  width: 90%;
   height: 67vh;
   padding: 10px;
-  box-shadow: rgb(17 12 46 / 15%) 13px -5px 25px 13px;
-  border-radius: 10px 10px 15px 15px;
-  border: 2.5px solid var(--clr-accent);
+  background-color: rgb(241, 232, 243);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border: 2px solid var(--clr-accent);
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  justify-self: center;
   align-items: center;
   position: relative;
   transition: var(--gen-transition);
@@ -144,23 +156,26 @@ body {
   width: 100%;
   height: 30%;
   background-color: var(--clr-accent);
-  border-radius: 10px 10px 0 0;
-  z-index: -1;
+  border-radius: 5px 5px 0 0;
+  z-index: 0;
 }
 .card:hover {
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-  border-color: var(--clr-dark);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  transform: translateY(-1%);
 }
-.card .top-part:hover img {
+.card:hover img {
   transition: var(--gen-transition);
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-  transform: scale(1.2);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  transform: translateY(-4%);
 }
 .card .top-part,
 .card .bottom-part {
   height: 50%;
+  width: 100%;
 }
 .card .bottom-part {
   display: flex;
@@ -169,12 +184,14 @@ body {
 }
 
 .card .image {
-  width: 130px;
-  height: 130px;
+  width: 50%;
+  height: 70%;
+  position: relative;
+  transform: translateX(50%);
   border-radius: 50%;
   margin-top: 5vh;
   padding: 2px;
-  background-color: var(--clr-white);
+  background-color: rgb(241, 222, 245);
 }
 .card .image img {
   width: 100%;
@@ -207,42 +224,34 @@ body {
   margin-left: 10px;
 }
 .social-handle i {
-  color: var(--clr-accent);
+  color: var(--clr-light-two);
   cursor: pointer;
   transform: scale(1.3);
 }
 
 .social-handle i:hover {
   transform: scale(2);
+  color: var(--clr-accent);
   transition: var(--gen-transition);
-}
-
-.row-1 .card {
-  margin: auto;
-}
-.row-2 {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 1.6rem;
-  padding: 0 10%;
 }
 
 .club-head {
   width: 100%;
-  padding: 40px 10px 60px 10px;
+  padding: var(--gen-padding);
 }
 .card.clubHead-card {
-  width: 20vw;
+  width: 55%;
   height: 47vh;
   padding: 10px;
-  box-shadow: rgb(17 12 46 / 15%) 13px -5px 25px 13px;
   display: flex;
   flex-direction: column;
-  border: 3.5px solid var(--clr-accent);
+  border: 2px solid var(--clr-accent);
+  border-radius: 10px;
   justify-content: space-between;
   align-items: center;
   transition: var(--gen-transition);
-  margin-bottom: 5vh;
+  margin-bottom: auto;
+  justify-self: center;
 }
 
 .club-mem {
@@ -252,38 +261,36 @@ body {
 
 .member-list {
   width: 100%;
-  /* border: 1px solid black; */
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  justify-items: center;
+  grid-template-columns: repeat(4, max-content);
+  justify-content: space-around;
   row-gap: 8px;
 }
-.member-list li{
+.member-list li {
   list-style-type: disc;
   color: var(--clr-accent);
   /* border: 1px solid green; */
-  
 }
 
-.interns{
+.interns {
   width: 100%;
   padding: var(--gen-padding);
 }
-.club-mem h1,.interns h1{
+.club-mem h1,
+.interns h1 {
   margin-bottom: 5vh;
 }
 
 /* responsive */
 @media (max-width: 950px) {
   .card.faculty-card {
-    height: 90%;
     width: 40vw;
     margin-bottom: 20px;
   }
 
   .row-2 {
-    flex-direction: column;
+    grid-template-columns: 1fr;
     align-items: center;
   }
 }
@@ -304,7 +311,7 @@ body {
     width: 65%;
     height: 37vh;
   }
-  .member-list{
-    grid-template-columns:  1fr;
+  .member-list {
+    grid-template-columns: 1fr;
   }
 }
